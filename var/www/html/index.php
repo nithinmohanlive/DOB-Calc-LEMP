@@ -18,6 +18,9 @@
     </form>
 
     <?php
+    // Get the system's IP address
+    $system_ip = $_SERVER['SERVER_ADDR'];
+
     // Database connection details
     $servername = "localhost";
     $username = "ubuntu";
@@ -69,6 +72,8 @@
     } else {
         echo "<p>No data in the table.</p>";
     }
+
+    echo "<h2>System IP: $system_ip</h2>";  // Display system IP address
     
     // Close connection
     $conn->close();    
