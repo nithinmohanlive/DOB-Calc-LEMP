@@ -1,3 +1,5 @@
+#!/bin/bash
+
 apt update -y
 apt install -y nginx
 apt install -y php-fpm
@@ -14,12 +16,13 @@ systemctl start nginx
 systemctl start php8.1-fpm
 
 apt install -y mysql-server
-mysql -u root
+mysql -u root <<EOF
 CREATE DATABASE dob_db;
 USE dob_db;
 CREATE TABLE dob_table (name VARCHAR(20), dob DATE, age INT);
 CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-QUIT
+EOF
+
 systemctl restart nginx
