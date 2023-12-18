@@ -13,3 +13,12 @@ sudo chown ubuntu:ubuntu /run/php/php8.1-fpm.sock
 sudo systemctl start nginx
 sudo systemctl start php8.1-fpm
 
+sudo apt install -y mysql-server
+sudo mysql -u root
+CREATE DATABASE dob_db;
+USE dob_db;
+CREATE TABLE dob_table (name VARCHAR(20), dob DATE, age INT);
+CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+QUIT

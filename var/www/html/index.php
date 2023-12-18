@@ -20,8 +20,8 @@
     <?php
     // Database connection details
     $servername = "localhost";
-    $username = "nithin";
-    $password = "P@t(h@2021";
+    $username = "ubuntu";
+    $password = "password";
     $dbname = "dob_db";
     
     // Create connection
