@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# installing nginx and PHP-FPM
 apt update -y
 apt install -y nginx
 apt install -y php-fpm
 apt install -y php-mysqli
+
+# Copying configuration files
 cd /tmp
 git clone https://github.com/nithinmohanlive/DOB-Calc-LEMP.git
 cp -f /tmp/DOB-Calc-LEMP/etc/nginx/nginx.conf /etc/nginx/nginx.conf
@@ -12,9 +15,12 @@ cp -f /tmp/DOB-Calc-LEMP/etc/nginx/sites-enabled/dob-calc /etc/nginx/sites-enabl
 cp -f /tmp/DOB-Calc-LEMP/var/www/html/index.php /var/www/html/index.php
 chown ubuntu:ubuntu /var/www/html/index.php
 chown ubuntu:ubuntu /run/php/php8.1-fpm.sock
+
+# starting nginx and PHP-FPM
 systemctl start nginx
 systemctl start php8.1-fpm
 
+# Creating database for storing DOB details
 apt install -y mysql-server
 mysql -u root <<EOF
 CREATE DATABASE dob_db;
