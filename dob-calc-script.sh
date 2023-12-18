@@ -22,3 +22,4 @@ CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 QUIT
+sudo systemctl restart nginx
