@@ -16,11 +16,11 @@ cp -f /tmp/DOB-Calc-LEMP/var/www/html/index.php /var/www/html/index.php
 chown ubuntu:ubuntu /var/www/html/index.php
 chown ubuntu:ubuntu /run/php/php8.1-fpm.sock
 
-# starting nginx and PHP-FPM
-systemctl start nginx
-systemctl start php8.1-fpm
+# restarting nginx and PHP-FPM
+systemctl restart nginx
+systemctl restart php8.1-fpm
 
-# Creating database for storing DOB details
+# Mysql db configuration
 apt install -y mysql-server
 mysql -u root <<EOF
 CREATE DATABASE dob_db;
