@@ -22,7 +22,7 @@
     $system_ip = $_SERVER['SERVER_ADDR'];
 
     // Database connection details
-    $servername = "mydbinstance.cg5xfd0bp0fe.ap-south-1.rds.amazonaws.com";
+    $servername = "localhost";
     $username = "ubuntu";
     $password = "password";
     $dbname = "dob_db";
