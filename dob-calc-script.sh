@@ -13,7 +13,7 @@ cp -f /tmp/DOB-Calc-LEMP/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 cp -f /tmp/DOB-Calc-LEMP/etc/php/8.1/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf
 cp -f /tmp/DOB-Calc-LEMP/etc/nginx/sites-enabled/dob-calc /etc/nginx/sites-enabled/default
 cp -f /tmp/DOB-Calc-LEMP/var/www/html/index.php /var/www/html/index.php
-chown ubuntu:ubuntu /var/www/html/index.php
+chown -R ubuntu:ubuntu /var/www/html
 chown ubuntu:ubuntu /run/php/php8.1-fpm.sock
 
 # restarting nginx and PHP-FPM
