@@ -16,23 +16,3 @@ server {
 		fastcgi_pass unix:/run/php/php8.1-fpm.sock;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
